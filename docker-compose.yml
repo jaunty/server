@@ -3,6 +3,7 @@ version: "3"
 services:
   minecraft:
     image: itzg/minecraft-server
+    container_name: minecraft-server
     restart: unless-stopped
     tty: true
     stdin_open: true
@@ -22,6 +23,19 @@ services:
       MEMORY: "3G"
       INIT_MEMORY: "1G"
       MAX_MEMORY: "3G"
+  backup:
+    image: itzg/mc-backup
+    env_file:
+      - .env
+    volumes:
+      - $HOME/server-data:/data:ro
+      - $HOME/server-backups:/backups
+    networks:
+      - jaunty
+    environment:
+      BACKUP_NAME: "jaunty"
+      RCON_HOST: "minecraft-server"
+      TZ: "America/New_York"
 
 
 networks:
