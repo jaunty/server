@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  minecraft:
+    image: itzg/minecraft-server
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
+    env_file:
+      - .env
+    ports:
+      - "25565:25565"
+      - "25575:25575"
+    networks:
+      - jaunty
+    volumes:
+      - $HOME/server-data:/data
+
+networks:
+  jaunty:
+    external: true
