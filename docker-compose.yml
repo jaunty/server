@@ -15,6 +15,14 @@ services:
       - jaunty
     volumes:
       - $HOME/server-data:/data
+    environment:
+      EULA: "true"
+      TZ: "America/New_York"
+      USE_AIKAR_FLAGS: "true"
+      MEMORY: "3G"
+      INIT_MEMORY: "1G"
+      MAX_MEMORY: "3G"
+
 
 networks:
   jaunty:
