@@ -22,10 +22,10 @@ timings:
   - settings.velocity-support.secret
   history-interval: 300
   history-length: 3600
-  server-name: Unknown Server
+  server-name: Jaunty
 messages:
   kick:
-    authentication-servers-down: ''
+    authentication-servers-down: Authentication servers are down
     connection-throttle: Connection throttled! Please wait before reconnecting.
     flying-player: Flying is not enabled on this server
     flying-vehicle: Flying is not enabled on this server
@@ -108,17 +108,17 @@ world-settings:
     water-over-lava-flow-speed: 5
     grass-spread-tick-rate: 1
     game-mechanics:
-      disable-chest-cat-detection: false
+      disable-chest-cat-detection: true
       nerf-pigmen-from-nether-portals: false
       disable-player-crits: false
       disable-sprint-interruption-on-attack: false
       shield-blocking-delay: 5
-      disable-end-credits: false
-      disable-unloaded-chunk-enderpearl-exploit: true
+      disable-end-credits: true
+      disable-unloaded-chunk-enderpearl-exploit: false
       disable-relative-projectile-velocity: false
       disable-mob-spawner-spawn-egg-transformation: false
       scan-for-legacy-ender-dragon: true
-      fix-curing-zombie-villager-discount-exploit: true
+      fix-curing-zombie-villager-discount-exploit: false
       disable-pillager-patrols: false
       pillager-patrols:
         spawn-chance: 0.2
@@ -128,7 +128,7 @@ world-settings:
         start:
           per-player: false
           day: 5
-    use-faster-eigencraft-redstone: false
+    use-faster-eigencraft-redstone: true
     nether-ceiling-void-damage-height: 0
     only-players-collide: false
     allow-vehicle-collisions: true
@@ -167,7 +167,7 @@ world-settings:
       - deepslate
     keep-spawn-loaded: true
     armor-stands-do-collision-entity-lookups: true
-    parrots-are-unaffected-by-player-movement: false
+    parrots-are-unaffected-by-player-movement: true
     disable-explosion-knockback: false
     allow-non-player-entities-on-scoreboards: false
     portal-search-radius: 128
@@ -211,7 +211,7 @@ world-settings:
     should-remove-dragon: false
     max-auto-save-chunks-per-tick: 24
     baby-zombie-movement-modifier: 0.5
-    optimize-explosions: false
+    optimize-explosions: true
     use-vanilla-world-scoreboard-name-coloring: false
     prevent-moving-into-unloaded-chunks: false
     count-all-mobs-for-spawning: false
@@ -223,7 +223,7 @@ world-settings:
       underground_water_creature: -1
       water_creature: -1
       water_ambient: -1
-    ender-dragons-death-always-places-dragon-egg: false
+    ender-dragons-death-always-places-dragon-egg: true
     experience-merge-max-value: -1
     allow-using-signs-inside-spawn-protection: false
     wandering-trader:
@@ -280,7 +280,7 @@ world-settings:
         min: 20
         max: 40
     lootables:
-      auto-replenish: false
+      auto-replenish: true
       restrict-player-reloot: true
       reset-seed-on-fill: true
       max-refills: -1
@@ -293,7 +293,7 @@ world-settings:
     duplicate-uuid-saferegen-delete-range: 32
     hopper:
       cooldown-when-full: true
-      disable-move-event: false
+      disable-move-event: true
       ignore-occluding-blocks: true
     mob-effects:
       undead-immune-to-certain-effects: true
