@@ -20,6 +20,7 @@ services:
       EULA: "true"
       TZ: "America/New_York"
       USE_AIKAR_FLAGS: "true"
+      TYPE: "PAPER"
       MEMORY: "3G"
       INIT_MEMORY: "1G"
       MAX_MEMORY: "3G"
