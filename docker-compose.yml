@@ -22,9 +22,9 @@ services:
       TZ: "America/New_York"
       USE_AIKAR_FLAGS: "true"
       TYPE: "PAPER"
-      MEMORY: "3G"
+      MEMORY: "7G"
       INIT_MEMORY: "1G"
-      MAX_MEMORY: "3G"
+      MAX_MEMORY: "7G"
   backup:
     image: itzg/mc-backup
     env_file:
