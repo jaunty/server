@@ -11,6 +11,7 @@ services:
       - .env
     ports:
       - "42069:25565"
+      - "7091:7091"
       - "25575:25575"
       - "24454:24454/udp"
     networks:
@@ -22,9 +23,8 @@ services:
       TZ: "America/New_York"
       USE_AIKAR_FLAGS: "true"
       TYPE: "PAPER"
-      MEMORY: "7G"
-      INIT_MEMORY: "1G"
-      MAX_MEMORY: "7G"
+      JMX_HOST: "$HOSTNAME"
+      MEMORY: "6G"
       OVERRIDE_SERVER_PROPERTIES: "true"
   backup:
     image: itzg/mc-backup
