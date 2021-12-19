@@ -27,7 +27,7 @@ services:
       JMX_HOST: "$HOSTNAME"
       MEMORY: "6G"
       OVERRIDE_SERVER_PROPERTIES: "true"
-      SPIGET_RESOURCES: "81534,93738"
+      SPIGET_RESOURCES: "81534,93738,60237"
   backup:
     image: itzg/mc-backup
     env_file:
