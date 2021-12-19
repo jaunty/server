@@ -9,7 +9,7 @@ services:
     stdin_open: true
     env_file:
       - .env
-      - server.properties.env
+      - server.properties
     ports:
       - "42069:25565"
       - "7091:7091"
