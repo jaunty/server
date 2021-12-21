@@ -42,16 +42,6 @@ settings:
     PLAYER:
       grave:
         enabled: true
-      world:
-        - ALL
-      death:
-        reason:
-          - ALL
-
-  default:
-    default:
-      grave:
-        enabled: true
         time: -1
         max: 10
         break: false
@@ -82,7 +72,7 @@ settings:
           type: 0
 
       hologram:
-        enabled: false
+        enabled: true
 
       protection:
         enabled: true
@@ -151,10 +141,21 @@ settings:
       
       command:
         create:
-          - "w %owner_name% A grave containing the contents of your inventory has been created at %x% X, %y% Y, %z% Z, respectively."
+          - "w %owner_name% You died at %x% X, %y% Y, %z% Z in the %world_formatted%"
+
+      message:
+        death: ""
+        world:
+          world_the_end: "End"
+          world: "Overworld"
+          world_the_nether: "Nether"
 
       death:
         player: true
         entity: true
         environmental: true
-      
+
+  default:
+    default:
+      grave:
+        enabled: false
