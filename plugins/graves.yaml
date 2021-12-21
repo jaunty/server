@@ -1,0 +1,160 @@
+config-version: 2
+
+settings:
+  storage:
+    type: SQLITE
+    sqlite:
+      journal-mode: "WAL"
+      synchronous: "OFF"
+
+  debug: 0
+
+  integration:
+    vault:
+      enabled: false
+    worldedit:
+      enabled: false
+      write: false
+    worldguard:
+      enabled: false
+    griefdefender:
+      enabled: false
+    furniturelib:
+      enabled: false
+    furnitureengine:
+      enabled: false
+    protectionlib:
+      enabled: false
+    itemsadder:
+      enabled: false
+      write: false
+    placeholderapi:
+      enabled: false
+    chestsort:
+      enabled: false
+    itembridge:
+      enabled: false
+  
+  compatibility:
+    warning: true
+
+  entity:
+    PLAYER:
+      grave:
+        enabled: true
+      world:
+        - ALL
+      death:
+        reason:
+          - ALL
+
+  default:
+    default:
+      grave:
+        enabled: true
+        time: -1
+        max: 10
+        break: false
+        explode: false
+      
+      placement:
+        can-build: false
+        can-build-protectionlib: false
+        ground: true
+        void: true
+        lava-top: true
+        void-smart: true
+        lava-smart: true
+
+      world:
+        - ALL
+
+      drop:
+        timeout: true
+        explode: true
+        break: true
+
+      block:
+        enabled: true
+        material: PLAYER_HEAD
+        walk-over: false
+        head:
+          type: 0
+
+      hologram:
+        enabled: false
+
+      protection:
+        enabled: true
+        time: -1
+        open:
+          owner: true
+          killer: false
+          other: false
+        missing:
+          owner: true
+          other: false
+
+      token:
+        enabled: false
+
+      storage:
+        mode: EXACT
+
+      experience:
+        store: false
+
+      respawn:
+        compass: false
+
+      particle:
+        enabled: false
+
+      teleport:
+        enabled: false
+
+      zombie:
+        type: SKELETON
+        spawn-owner: false
+        spawn-other: true
+        only-break: false
+        explode: false
+        owner-head: false
+
+      replace:
+        block:
+          not-solid: true
+
+      virtual:
+        distance: 15
+
+      schematic:
+        enabled: false
+
+      furniturelib:
+        enabled: false
+
+      furnitureengine:
+        enabled: false
+
+      itemsadder:
+        furniture:
+          enabled: false
+        block:
+          enabled: false
+
+      oraxen:
+        furniture:
+          enabled: false
+        block:
+          enabled: false
+      
+      command:
+        create:
+          - "w %owner_name% A grave containing the contents of your inventory has been created at %x% X, %y% Y, %z% Z, respectively."
+
+      death:
+        player: true
+        entity: true
+        environmental: true
+      
