@@ -40,6 +40,8 @@ services:
       BACKUP_NAME: "jaunty"
       RCON_HOST: "minecraft-server"
       TZ: "America/New_York"
+      BACKUP_INTERVAL: "24h"
+      PRUNE_BACKUPS_DAYS: "2"
 
 
 networks:
