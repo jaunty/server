@@ -27,6 +27,7 @@ services:
       JMX_HOST: "$HOSTNAME"
       MEMORY: "6G"
       OVERRIDE_SERVER_PROPERTIES: "true"
+      FORCE_REDOWNLOAD: "true"
   backup:
     image: itzg/mc-backup
     env_file:
