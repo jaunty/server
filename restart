@@ -1,0 +1,7 @@
+#!/bin/bash
+
+/usr/bin/docker compose -f /home/mc/server/docker-compose.yml stop
+
+/usr/bin/tar xzvf jaunty-$(date +"%Y%m%d-%H%M%S").tar.gz /home/mc/server-data/jaunty
+
+/usr/bin/docker compose -f /home/mc/server/docker-compose.yml up -d
