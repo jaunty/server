@@ -1,0 +1,19 @@
+# jars
+*.jar
+
+# server yaml configs
+*.yml
+
+# sub-directories
+libraries/*
+logs/*
+plugins/*
+cache/*
+
+# specific files
+eula.txt
+ops.json
+ops.txt.converted
+server.properties
+usercache.json
+server-icon.png

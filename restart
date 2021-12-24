@@ -1,0 +1,19 @@
+#!/bin/bash
+
+: "${BACKUP_DIR:=/home/mc/server-data}"
+: "${JAUNTY_COMPOSE:=/home/mc/server/docker-compose.yml}"
+: "${RESTIC_REPO:=b2:jaunty:/home/mc/restic-backups}"
+: "${RESTIC_EXCLUDE_FILE:=/home/mc/server/excludes.txt}"
+: "${RESTIC_PASSWORD_FILE:=}"
+: "${RESTIC_FORCE_RESCAN:=--force}"
+
+if [ -z $RESTIC_PASSWORD_FILE ]; then
+	echo "REPO PASSWORD NOT SET, EXITING..."
+	exit 1
+fi
+
+/usr/bin/docker compose -f $JAUNTY_COMPOSE stop
+
+/usr/bin/restic -r $RESTIC_REPO --exclude-file $RESTIC_EXCLUDE_FILE $RESTIC_FORCE_RESCAN --verbose backup $BACKUP_DIR
+
+/usr/bin/docker compose -f $JAUNTY_COMPOSE up -d

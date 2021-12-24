@@ -28,29 +28,7 @@ services:
       MEMORY: "6G"
       OVERRIDE_SERVER_PROPERTIES: "true"
       FORCE_REDOWNLOAD: "true"
-  backup:
-    image: itzg/mc-backup
-    env_file:
-      - .env
-    volumes:
-      - $HOME/server-data:/data:ro
-      - $HOME/server-backups:/backups
-      - rclone-config:/config/rclone
-    networks:
-      - jaunty
-    environment:
-      BACKUP_NAME: "jaunty"
-      RCON_HOST: "minecraft-server"
-      TZ: "America/New_York"
-      BACKUP_METHOD: "restic"
-      BACKUP_INTERVAL: "24h"
-      PRUNE_BACKUPS_DAYS: "2"
-      RESTIC_REPOSITORY: "rclone:backups:local"
-
-volumes:
-  rclone-config:
-    external: true
-
+    
 networks:
   jaunty:
     external: true
