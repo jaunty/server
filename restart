@@ -4,7 +4,7 @@
 : "${JAUNTY_COMPOSE:=/home/mc/server/docker-compose.yml}"
 : "${RESTIC_REPO:=b2:jaunty:/home/mc/restic-backups}"
 : "${RESTIC_EXCLUDE_FILE:=/home/mc/server/excludes.txt}"
-: "${RESTIC_PASSWORD_FILE:=}"
+: "${RESTIC_PASSWORD_FILE:=/home/mc/.restic}"
 : "${RESTIC_FORCE_RESCAN:=--force}"
 
 if [ -z $RESTIC_PASSWORD_FILE ]; then
