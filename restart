@@ -14,6 +14,6 @@ fi
 
 /usr/bin/docker compose -f $JAUNTY_COMPOSE stop
 
-/usr/bin/restic -r $RESTIC_REPO --exclude-file $RESTIC_EXCLUDE_FILE $RESTIC_FORCE_RESCAN --verbose backup $BACKUP_DIR
+/usr/bin/restic -r $RESTIC_REPO --password-file $RESTIC_PASSWORD_FILE --exclude-file $RESTIC_EXCLUDE_FILE $RESTIC_FORCE_RESCAN --verbose backup $BACKUP_DIR
 
 /usr/bin/docker compose -f $JAUNTY_COMPOSE up -d
