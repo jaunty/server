@@ -64,7 +64,7 @@ world-settings:
     enable-zombie-pigmen-portal-spawns: true
     merge-radius:
       item: 2.5
-      exp: 3.0
+      exp: 0
     item-despawn-rate: 6000
     view-distance: 4
     simulation-distance: default
