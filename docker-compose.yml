@@ -25,7 +25,7 @@ services:
       USE_AIKAR_FLAGS: "true"
       TYPE: "PAPER"
       JMX_HOST: "$HOSTNAME"
-      MEMORY: "6G"
+      MEMORY: "3G"
       OVERRIDE_SERVER_PROPERTIES: "true"
       FORCE_REDOWNLOAD: "true"
     
