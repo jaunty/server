@@ -6,6 +6,10 @@ services:
     restart: "unless-stopped"
     tty: true
     stdin_open: true
+    env_file:
+      - env/container.env
+      - env/server.env
+      - env/motd.env
     ports:
       - "42069:25565"
       - "24454:24454/udp"
