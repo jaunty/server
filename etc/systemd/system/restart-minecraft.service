@@ -1,0 +1,6 @@
+[Unit]
+Descripton=Restart Minecraft Server
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/restart-minecraft

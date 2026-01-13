@@ -1,0 +1,3 @@
+paper:axgraves:release
+paper:chunky:release
+paper:simple-voice-chat:release

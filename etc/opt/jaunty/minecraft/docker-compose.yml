@@ -1,0 +1,21 @@
+services:
+  minecraft:
+    image: "itzg/minecraft-server:latest"
+    container_name: "minecraft"
+    pull_policy: "daily"
+    restart: "unless-stopped"
+    tty: true
+    stdin_open: true
+    ports:
+      - "42069:25565"
+      - "24454:24454/udp"
+    volumes:
+      - "/var/opt/jaunty/minecraft:/data"
+      - "/etc/opt/jaunty/minecraft/config:/config"
+      - "/etc/opt/jaunty/minecraft/plugins:/plugins"
+    secrets:
+      - rcon_password
+
+secrets:
+  rcon_password:
+    file: "/etc/opt/jaunty/minecraft/env/rcon_password"
