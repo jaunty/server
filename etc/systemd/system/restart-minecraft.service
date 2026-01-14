@@ -3,4 +3,4 @@ Descripton=Restart Minecraft Server
 
 [Service]
 Type=oneshot
-ExecStart=/usr/sbin/restart-minecraft
+ExecStart=/usr/local/sbin/restart-minecraft
