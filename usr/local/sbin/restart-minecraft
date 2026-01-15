@@ -26,7 +26,7 @@ fi
 if [[ -e '/etc/opt/jaunty/minecraft/state/motd.json' ]]; then
     data="$(cat /etc/opt/jaunty/minecraft/state/motd.json)"
     new_motd="$(jq -r '.[]' <<< "$data" | shuf -n 1)"
-    new_motds="$(jq --arg motd "$new_motd" 'del(.[] | select(. -- $motd))' <<< "$data")"
+    new_motds="$(jq --arg motd "$new_motd" 'del(.[] | select(. == $motd))' <<< "$data")"
     echo "MOTD=$new_motd" > /etc/opt/jaunty/minecraft/env/motd.env
     echo $new_motds > /etc/opt/jaunty/minecraft/state/motd.json
 fi
