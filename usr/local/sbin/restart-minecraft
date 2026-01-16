@@ -4,7 +4,7 @@ function log_error() {
     systemd-cat "$0: $@"
 }
 
-dependencies=(docker jq rclone)
+dependencies=(docker rclone)
 for dep in "${dependencies[@]}"; do
     if ! command -v $dep >> /dev/null; then
         log_error "dependency $dep is not installed"
@@ -21,14 +21,6 @@ rclone sync /var/opt/jaunty/minecraft jaunty:Jaunty2026
 if (($? > 0)); then
     log_error 'Failed to sync data to Backblaze'
     exit 1
-fi
-
-if [[ -e '/etc/opt/jaunty/minecraft/state/motd.json' ]]; then
-    data="$(cat /etc/opt/jaunty/minecraft/state/motd.json)"
-    new_motd="$(jq -r '.[]' <<< "$data" | shuf -n 1)"
-    new_motds="$(jq --arg motd "$new_motd" 'del(.[] | select(. == $motd))' <<< "$data")"
-    echo "MOTD=$new_motd" > /etc/opt/jaunty/minecraft/env/motd.env
-    echo $new_motds > /etc/opt/jaunty/minecraft/state/motd.json
 fi
 
 docker compose --file /etc/opt/jaunty/minecraft/docker-compose.yml start
