@@ -11,14 +11,16 @@ for dep in "${dependencies[@]}"; do
     fi
 done
 
+compose_file='/etc/opt/jaunty/minecraft/docker-compose.yml'
+
 docker compose \
-    --file /etc/opt/jaunty/minecraft/docker-compose.yml \
+    --file $compose_file \
     exec minecraft \
-    "rcon-cli say The server is restarting in 1 minute"
+    rcon-cli "say The server is restarting in 1 minute"
 
 sleep 60
 
-docker compose --file /etc/opt/jaunty/minecraft/docker-compose.yml stop
+docker compose --file $compose_file stop
 if (($? > 0)); then
     log_error 'Failed to stop Minecraft server container'
     exit 1
@@ -30,7 +32,7 @@ if (($? > 0)); then
     exit 1
 fi
 
-docker compose --file /etc/opt/jaunty/minecraft/docker-compose.yml start
+docker compose --file $compose_file start
 if (($? > 0)); then
     log_error 'Failed to start Minecraft server container'
     exit 1
